@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FavIcon  -->
+    <link rel="apple-touch-icon" href="assets/Images/logo.png">
+    <link rel="shortcut icon" href="assets/Images/logo.png" type="image/x-icon">
+
+
+    <!-- css  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/backend.css">
+
+    <title>SportsBlog - Dashboard</title>
+</head>
+
+<body>
+    <!-- navigation bar  -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/Images/blgspt (11).png" alt="">
+                </a>
+                <div class="d-flex">
+                    <div class="input-group  d-flex d-lg-none me-2">
+                        <input type="text" class=" searchIp" placeholder="Type here to serach" aria-label="serach"
+                            aria-describedby="basic-addon1">
+                        <button class="input-group-text btn searchBtn color2Back" id="basic-addon1">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav m-auto text-center">
+                    </ul>
+
+                    <!-- search btn and logout area  -->
+                    <div
+                        class="leftNav d-flex flex-column-reverse flex-lg-row justify-content-center align-items-center ">
+                        <!-- search button  -->
+                        <div class="input-group d-lg-flex d-none">
+                            <input type="text" class=" searchIp" placeholder="Type here to serach" aria-label="serach"
+                                aria-describedby="basic-addon1">
+                            <button class="input-group-text btn searchBtn color2Back" id="basic-addon1">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+
+                        <!-- logout button  -->
+                        <button type="button" class="btn SgnUp">
+                            Log out
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <!-- navbar end  -->
+
+
+
+    <!-- main section  -->
+    <section class="dashboard">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- page left side pannel  -->
+
+                <div class="col-12 col-md-2 ps-0">
+                    <div class="ctrlPannel">
+
+                        <!-- toggle sidebar  -->
+                        <button class="closeBtn dashClose text-danger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <!-- toggle sidebar  end-->
+
+                        <div class="pannelView">
+                            <!-- login details  -->
+                            <div class="userDetails d-flex align-items-center">
+                                <img src="assets/Images/usr (1).png" alt="" class="userImg">
+                                <div class="lgnDetl d-flex flex-column ms-2 ps-2">
+                                    <h2 class="text-light m-0">Welcome :</h2>
+                                    <h1 class="admnName m-0">Super Admin</h1>
+                                </div>
+                            </div>
+                            <!-- login details end -->
+
+
+                            <div class="detailssection mt-4">
+                                <!-- dashboard button -->
+                                <button class="dashBtn accordion-button text-light" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#dashboardBox" aria-expanded="true"
+                                    aria-controls="dashboardBox">
+                                    <i class="fa-solid fa-gauge"></i> <span class="btnName ps-3">Dashboard</span>
+                                </button>
+                                <!-- dashboard button end -->
+
+                                <!-- users button  -->
+                                <button class="dashBtn text-light accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#UserDetails" aria-expanded="false"
+                                    aria-controls="UserDetails">
+                                    <i class="fa-solid fa-users"></i> <span class="btnName ps-3">Users</span>
+                                </button>
+                                <!-- users button end -->
+
+                                <!-- own account details button  -->
+                                <button class="dashBtn text-light accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    <i class="fa-regular fa-user"></i> <span class="btnName ps-3">Account Details</span>
+                                </button>
+                                <!-- own account details button end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- page left side pannel end -->
+
+                <!-- page center pannel  -->
+                <div class="col-12 col-md-8">
+                    <div class="dashboradPannel">
+                        <div class="accordion" id="LoginDetailsBox">
+                            <!-- adshboard section  -->
+                            <div class="accordion-item">
+                                <div id="dashboardBox" class="accordion-collapse collapse show"
+                                    data-bs-parent="#LoginDetailsBox">
+                                    <div
+                                        class="accordion-body dashboardBoxDiv d-flex justify-content-between flex-column">
+                                        <h1
+                                            class="dashContHead headTiltle text-uppercase text-center text-light fw-bold py-4">
+                                            Dashboard
+                                        </h1>
+                                        <div class="searchBox d-flex justify-content-between py-4">
+
+                                            <!-- search bar  -->
+                                            <form class="d-flex" role="search">
+                                                <input class="form-control me-2" type="search" placeholder="Search"
+                                                    aria-label="Search">
+                                                <button class="btn btn-dark" type="submit">Search</button>
+                                            </form>
+                                            <!-- search bar end  -->
+
+                                            <!-- new post button  -->
+                                            <div class="detailsatDb btnboxusers p-0">
+                                                <a class="fw-bold text-light w-100 p-2 px-3 d-block"
+                                                    href="new-post.html">
+                                                    <i class="fa-solid fa-plus pe-2"></i></i> Add new post
+                                                </a>
+                                            </div>
+                                            <!-- new post button end  -->
+
+                                        </div>
+                                        <div class="dataTableDashBox pb-3 h-100">
+                                            <!-- dashboard table starts here  -->
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center" scope="col">Id</th>
+                                                        <th scope="col">
+                                                            Name
+                                                            <button class=" btnshort text-light p-0 m-0">
+                                                                <i class="fa-solid fa-down-long"></i>
+                                                            </button>
+                                                        </th>
+                                                        <th scope="col">Email
+                                                            <button class=" btnshort text-light p-0 m-0">
+                                                                <i class="fa-solid fa-down-long"></i>
+                                                            </button>
+                                                        </th>
+                                                        <th class="text-center" scope="col">Title
+                                                            <button class=" btnshort text-light p-0 m-0">
+                                                                <i class="fa-solid fa-down-long"></i>
+                                                            </button>
+                                                        </th>
+                                                        <th scope="col"></th>
+                                                        <th scope="col"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="text-center" scope="row">#12345678</th>
+                                                        <td>Mark kumar hossen</td>
+                                                        <td>Otto@Admin.gh</td>
+                                                        <td> Dashboard Panel. Before jumping into the source code
+                                                            file,</td>
+                                                        <td class="text-center">
+                                                            <a href="#" class="editDash">
+                                                                <i class="fa-solid fa-pen"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="trashBtn">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center" scope="row">#12345678</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton@Admin.hgj</td>
+                                                        <td> Dashboard Panel. Before jumping into the source code
+                                                            file, you need to know the basic explanation of this video
+                                                            tutorial</td>
+                                                        <td class="text-center">
+                                                            <a href="#" class="editDash">
+                                                                <i class="fa-solid fa-pen"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="trashBtn">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center" scope="row">#12345678</th>
+                                                        <td>Mark kumar hossen</td>
+                                                        <td>Otto@Admin.gh</td>
+                                                        <td> Dashboard Panel. Before jumping into the source code
+                                                            file,</td>
+                                                        <td class="text-center">
+                                                            <a href="#" class="editDash">
+                                                                <i class="fa-solid fa-pen"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="trashBtn">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center" scope="row">#12345678</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton@Admin.hgj</td>
+                                                        <td> Dashboard Panel. Before jumping into the source code
+                                                            file, you need to know the basic explanation of this video
+                                                            tutorial</td>
+                                                        <td class="text-center">
+                                                            <a href="#" class="editDash">
+                                                                <i class="fa-solid fa-pen"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="trashBtn">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center" scope="row">#12345678</th>
+                                                        <td>Mark kumar hossen</td>
+                                                        <td>Otto@Admin.gh</td>
+                                                        <td> Dashboard Panel. Before jumping into the source code
+                                                            file,</td>
+                                                        <td class="text-center">
+                                                            <a href="#" class="editDash">
+                                                                <i class="fa-solid fa-pen"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="trashBtn">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center" scope="row">#12345678</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton@Admin.hgj</td>
+                                                        <td> Dashboard Panel. Before jumping into the source code
+                                                            file, you need to know the basic explanation of this video
+                                                            tutorial</td>
+                                                        <td class="text-center">
+                                                            <a href="#" class="editDash">
+                                                                <i class="fa-solid fa-pen"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <button class="trashBtn">
+                                                                <i class="fa-solid fa-trash-can"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- dashboard table end  -->
+                                        </div>
+
+
+                                        <!-- pagination start -->
+                                        <div class="paginationBox">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination  justify-content-center">
+                                                    <li class="page-item"><a class="" href="#">Previous</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="" href="#">1</a></li>
+                                                    <li class="page-item"><a class="" href="#">2</a></li>
+                                                    <li class="page-item"><a class="" href="#">3</a></li>
+                                                    <li class="page-item"><a class="" href="#" disabled>...</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="" href="#">8</a></li>
+                                                    <li class="page-item"><a class="" href="#">9</a></li>
+                                                    <li class="page-item"><a class="" href="#">Next</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                        <!-- pagination end  -->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard section ends here  -->
+
+                            <!-- users details section  -->
+                            <div class="accordion-item">
+
+                                <div id="UserDetails" class="accordion-collapse collapse"
+                                    data-bs-parent="#LoginDetailsBox">
+                                    <div class="accordion-body">
+                                        <h1
+                                            class="dashContHead headTiltle text-uppercase text-center text-light fw-bold py-4">
+                                            Users
+                                        </h1>
+                                        <div class="usersDeatailsBox">
+                                            <div class="usersDetailsCards">
+                                                <div class="card">
+                                                    <img src="assets/Images/banner.png" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <div class="text-center mb-3">
+                                                            <img src="assets/Images/blgspt (6).png" alt=""
+                                                                class="userimgmj m-auto">
+                                                        </div>
+                                                        <h5 class="card-title text-center fw-bold">User's Name</h5>
+                                                        <div class="card-text">
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="usersemail">
+                                                                    <i class="fa-solid fa-envelope"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0" id="usersemail">user@email.com</p>
+                                                            </div>
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="userRole">
+                                                                    <i class="fa-solid fa-user-tag"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0 text-uppercase" id="userRole ">User
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <a href="users-details.html" class="btn SgnUp m-auto">
+                                                                <i class="fa-solid fa-pen me-1"></i> Change Details
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <img src="assets/Images/banner.png" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <div class="text-center mb-3">
+                                                            <img src="assets/Images/blgspt (6).png" alt=""
+                                                                class="userimgmj m-auto">
+                                                        </div>
+                                                        <h5 class="card-title text-center fw-bold">User's Name</h5>
+                                                        <div class="card-text">
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="usersemail">
+                                                                    <i class="fa-solid fa-envelope"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0" id="usersemail">user@email.com</p>
+                                                            </div>
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="userRole">
+                                                                    <i class="fa-solid fa-user-tag"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0 text-uppercase" id="userRole ">User
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <a href="users-details.html" class="btn SgnUp m-auto">
+                                                                <i class="fa-solid fa-pen me-1"></i> Change Details
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <img src="assets/Images/banner.png" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <div class="text-center mb-3">
+                                                            <img src="assets/Images/blgspt (6).png" alt=""
+                                                                class="userimgmj m-auto">
+                                                        </div>
+                                                        <h5 class="card-title text-center fw-bold">User's Name</h5>
+                                                        <div class="card-text">
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="usersemail">
+                                                                    <i class="fa-solid fa-envelope"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0" id="usersemail">user@email.com</p>
+                                                            </div>
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="userRole">
+                                                                    <i class="fa-solid fa-user-tag"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0 text-uppercase" id="userRole ">User
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <a href="users-details.html" class="btn SgnUp m-auto">
+                                                                <i class="fa-solid fa-pen me-1"></i> Change Details
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <img src="assets/Images/banner.png" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <div class="text-center mb-3">
+                                                            <img src="assets/Images/blgspt (6).png" alt=""
+                                                                class="userimgmj m-auto">
+                                                        </div>
+                                                        <h5 class="card-title text-center fw-bold">User's Name</h5>
+                                                        <div class="card-text">
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="usersemail">
+                                                                    <i class="fa-solid fa-envelope"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0" id="usersemail">user@email.com</p>
+                                                            </div>
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="userRole">
+                                                                    <i class="fa-solid fa-user-tag"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0 text-uppercase" id="userRole ">User
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <a href="users-details.html" class="btn SgnUp m-auto">
+                                                                <i class="fa-solid fa-pen me-1"></i> Change Details
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <img src="assets/Images/banner.png" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <div class="text-center mb-3">
+                                                            <img src="assets/Images/blgspt (6).png" alt=""
+                                                                class="userimgmj m-auto">
+                                                        </div>
+                                                        <h5 class="card-title text-center fw-bold">User's Name</h5>
+                                                        <div class="card-text">
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="usersemail">
+                                                                    <i class="fa-solid fa-envelope"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0" id="usersemail">user@email.com</p>
+                                                            </div>
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="userRole">
+                                                                    <i class="fa-solid fa-user-tag"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0 text-uppercase" id="userRole ">User
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <a href="users-details.html" class="btn SgnUp m-auto">
+                                                                <i class="fa-solid fa-pen me-1"></i> Change Details
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <img src="assets/Images/banner.png" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <div class="text-center mb-3">
+                                                            <img src="assets/Images/blgspt (6).png" alt=""
+                                                                class="userimgmj m-auto">
+                                                        </div>
+                                                        <h5 class="card-title text-center fw-bold">User's Name</h5>
+                                                        <div class="card-text">
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="usersemail">
+                                                                    <i class="fa-solid fa-envelope"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0" id="usersemail">user@email.com</p>
+                                                            </div>
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="userRole">
+                                                                    <i class="fa-solid fa-user-tag"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0 text-uppercase" id="userRole ">User
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <a href="users-details.html" class="btn SgnUp m-auto">
+                                                                <i class="fa-solid fa-pen me-1"></i> Change Details
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <img src="assets/Images/banner.png" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <div class="text-center mb-3">
+                                                            <img src="assets/Images/blgspt (6).png" alt=""
+                                                                class="userimgmj m-auto">
+                                                        </div>
+                                                        <h5 class="card-title text-center fw-bold">User's Name</h5>
+                                                        <div class="card-text">
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="usersemail">
+                                                                    <i class="fa-solid fa-envelope"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0" id="usersemail">user@email.com</p>
+                                                            </div>
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="userRole">
+                                                                    <i class="fa-solid fa-user-tag"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0 text-uppercase" id="userRole ">User
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <a href="users-details.html" class="btn SgnUp m-auto">
+                                                                <i class="fa-solid fa-pen me-1"></i> Change Details
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <img src="assets/Images/banner.png" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <div class="text-center mb-3">
+                                                            <img src="assets/Images/blgspt (6).png" alt=""
+                                                                class="userimgmj m-auto">
+                                                        </div>
+                                                        <h5 class="card-title text-center fw-bold">User's Name</h5>
+                                                        <div class="card-text">
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="usersemail">
+                                                                    <i class="fa-solid fa-envelope"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0" id="usersemail">user@email.com</p>
+                                                            </div>
+                                                            <div class="usersbox d-flex align-items-center mb-3">
+                                                                <label for="userRole">
+                                                                    <i class="fa-solid fa-user-tag"></i>
+                                                                </label>
+                                                                <p class="ps-1 m-0 text-uppercase" id="userRole ">User
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <a href="users-details.html" class="btn SgnUp m-auto">
+                                                                <i class="fa-solid fa-pen me-1"></i> Change Details
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="paginationBox">
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="pagination  justify-content-center">
+                                                        <li class="page-item"><a class="" href="#">Previous</a>
+                                                        </li>
+                                                        <li class="page-item"><a class="" href="#">1</a></li>
+                                                        <li class="page-item"><a class="" href="#">2</a></li>
+                                                        <li class="page-item"><a class="" href="#">3</a></li>
+                                                        <li class="page-item"><a class="" href="#" disabled>...</a>
+                                                        </li>
+                                                        <li class="page-item"><a class="" href="#">8</a></li>
+                                                        <li class="page-item"><a class="" href="#">9</a></li>
+                                                        <li class="page-item"><a class="" href="#">Next</a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- users details section end  -->
+
+                            <!-- own account details  -->
+                            <div class="accordion-item">
+
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#LoginDetailsBox">
+                                    <div class="accordion-body">
+                                        <h1
+                                            class="dashContHead headTiltle text-uppercase text-center text-light fw-bold py-4">
+                                            Account Details
+                                        </h1>
+
+                                        <div class="userData overflow-hidden">
+                                            <div class="profile pb-5 ">
+                                                <div class="coverPic w-100 ">
+                                                    <img src="assets/Images/banner.png" alt="" class="h-100 w-100">
+                                                </div>
+                                                <div class="profilePic text-center">
+                                                    <img src="assets/Images/usr (3).png" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div class="userRoleDetails">
+                                                <h1 class="profileName text-center text-white headTiltle fw-bold">User's
+                                                    Name
+                                                </h1>
+
+                                                <div class="detailedDataUser d-flex justify-content-evenly p-4">
+                                                    <div class="usersbox d-flex align-items-center mb-3">
+                                                        <label for=" text-light" class=" fw-bold">
+                                                            Registration date:
+                                                        </label>
+                                                        <p class="ps-2 m-0 text-light">Mar 11, 2020
+                                                        </p>
+                                                    </div>
+                                                    <div class="usersbox d-flex align-items-center mb-3">
+                                                        <label for=" text-light" class=" fw-bold">
+                                                            Number of articles:
+                                                        </label>
+                                                        <p class="ps-2 m-0 text-uppercase text-light">
+                                                            22
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="detailedDataUser d-flex justify-content-evenly p-4">
+                                                    <div class="usersbox d-flex align-items-center mb-3">
+                                                        <label for=" text-light">
+                                                            <i class="fa-solid fa-envelope"></i>
+                                                        </label>
+                                                        <p class="ps-2 m-0 text-light" id="">user@email.com
+                                                        </p>
+                                                    </div>
+                                                    <div class="usersbox d-flex align-items-center mb-3">
+                                                        <label for=" text-light">
+                                                            <i class="fa-solid fa-user-tag"></i>
+                                                        </label>
+                                                        <p class="ps-2 m-0 text-uppercase text-light" id=" ">
+                                                            User
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="userDataBtnBox text-center m-5">
+                                                    <a href="own-details.html" class="btn SgnUp m-auto">
+                                                        <i class="fa-solid fa-pen me-1"></i> Change Details
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- own account details ends here  -->
+                        </div>
+                    </div>
+                </div>
+                <!-- page center pannel end -->
+
+                <!-- page right pannel  -->
+                <div class="col-12 col-md-2">
+                    <div class="p-3 pt-5">
+                        <!-- number of post counts here  -->
+                        <div class="detailsatDb mt-5">
+                            <h1 class="headTiltle text-center text-light ">
+                                Total Posts
+                            </h1>
+                            <span class="fw-bold">
+                                <i class="fa-solid fa-photo-film"></i>
+                                <span class="fw-bold">23</span>
+                            </span>
+                        </div>
+                        <!-- post counter end  -->
+                    </div>
+                </div>
+                <!-- page right pannel  end-->
+
+            </div>
+        </div>
+    </section>
+    <!-- end of main  -->
+
+
+    <!-- footer  -->
+    <footer>
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div><span class="updatedDae"></span> &copy; SportsBlog </div>
+        </div>
+    </footer>
+    <!-- footer end  -->
+
+
+
+    <!-- scripts  -->
+    <script src="assets/js/all.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+
+</body>
+
+</html>
